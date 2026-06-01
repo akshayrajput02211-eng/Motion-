@@ -20,7 +20,7 @@ export default function InfiniteMarqueeSection() {
         {[...Array(20)].map((_,i)=>(
             <h1 key={i}
             className="text-7xl font-black text-sky-500">
-                Aasha
+                Akshay
             </h1>
         ))}
       </div>

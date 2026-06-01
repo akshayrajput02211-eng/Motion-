@@ -1,9 +1,13 @@
 import { useEffect } from "react";
 import Lenis from "lenis";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import gsap from "gsap";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
 import Sections from "./pages/Sections";
+
+gsap.registerPlugin(ScrollTrigger);
 
 function App() {
   useEffect(() => {
@@ -12,6 +16,9 @@ function App() {
       smoothWheel: true,
     });
 
+    // 🔥 Important
+    lenis.on("scroll", ScrollTrigger.update);
+
     function raf(time) {
       lenis.raf(time);
       requestAnimationFrame(raf);
@@ -19,7 +26,11 @@ function App() {
 
     requestAnimationFrame(raf);
 
-    return () => lenis.destroy();
+    ScrollTrigger.refresh();
+
+    return () => {
+      lenis.destroy();
+    };
   }, []);
 
   return (

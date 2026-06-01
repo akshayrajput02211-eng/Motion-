@@ -6,7 +6,7 @@ import StaggerSection from "../components/sections/StaggerSection";
 import StringSection from "../components/sections/StringSection";
 import MouseFollowSection from "../components/sections/MouseFollowSection";
 import MagneticButtonSection from "../components/sections/MagneticButtonSection";
-import CustomCursorSection from "../components/sections/CustomCursorSection";
+
 import BlobCursorSection from "../components/sections/BlobCursorSection";
 import CursorTrailSection from "../components/sections/CursorTrailSection";
 import InfiniteMarqueeSection from "../components/sections/InfiniteMarqueeSection";
@@ -14,8 +14,11 @@ import HorizontalSection from "../components/sections/HorizontalSection";
 import ParallaxSection from "../components/sections/ParallaxSection";
 import ScrollTriggerSection from "../components/sections/ScrollTriggerSection";
 import PremiumGlassCard from "../components/sections/PremiumGlassCard";
-
-
+import CardsStackSection from "../components/sections/CardsStackSection";
+import TextSplitRevealSection from "../components/sections/TextSplitRevealSection";
+import rf from "../components/sections/card3d";
+import CreativeLoader from "../components/sections/CreativeLoader";
+import ThreeDCardsSection from "../components/sections/3DCardsSection";
 
 
 export default function Sections() {
@@ -32,7 +35,7 @@ export default function Sections() {
       <StringSection />
       <MouseFollowSection />
       <MagneticButtonSection />
-      <CustomCursorSection />
+      
       <BlobCursorSection />
       <CursorTrailSection />
       <InfiniteMarqueeSection />
@@ -40,6 +43,12 @@ export default function Sections() {
       <ParallaxSection />
 <ScrollTriggerSection />
       <PremiumGlassCard />
+      <CardsStackSection/>
+      <TextSplitRevealSection/>
+      <rf/>
+      <CreativeLoader/>
+      <ThreeDCardsSection/>
+
 
 
     </section>

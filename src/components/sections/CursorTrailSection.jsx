@@ -31,27 +31,21 @@ export default function CursorTrailSection() {
           Cursor Trail
         </h2>
 
-        {[...Array(9)].map((_, i) => (
-          <div
-            key={i}
-            className="
-              trail-dot
-              fixed
-              top-0
-              left-0
-              w-4
-              h-4
-              rounded-full
-              bg-gradient-to-r
-              from-sky-500
-              to-pink-500
-              pointer-events-none
-              z-[999]
-              -translate-x-1/2
-              -translate-y-1/2
-            "
-          />
-        ))}
+ {[...Array(12)].map((_, i) => (
+  <div
+    key={i}
+    className="trail-dot fixed top-0 left-0 pointer-events-none z-[9999]"
+    style={{
+      width: `${18 - i * 1.5}px`,
+      height: `${18 - i * 1.5}px`,
+      opacity: 0.8 - i * 0.08,
+      background:
+        "linear-gradient(to right,#38bdf8,#f9a8d4)",
+      borderRadius: "999px",
+      transform: "translate(-50%, -50%)",
+    }}
+  />
+))}
 
       </div>
     </section>
