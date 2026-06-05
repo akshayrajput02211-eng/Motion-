@@ -1,8 +1,22 @@
-import { Canvas } from "@react-three/fiber";
+import { Canvas, useFrame } from "@react-three/fiber";
+import { useRef } from "react";
 
-function Box() {
+function FloatingBox() {
+  const meshRef = useRef();
+
+  useFrame((state) => {
+    const time = state.clock.getElapsedTime();
+
+    // Floating Up Down
+    meshRef.current.position.y = Math.sin(time) * 0.4;
+
+    // Rotation
+    meshRef.current.rotation.x += 0.01;
+    meshRef.current.rotation.y += 0.01;
+  });
+
   return (
-    <mesh rotation={[0.5, 0.5, 0]}>
+    <mesh ref={meshRef}>
       <boxGeometry args={[2, 2, 2]} />
       <meshStandardMaterial color="#38bdf8" />
     </mesh>
@@ -11,15 +25,13 @@ function Box() {
 
 export default function ThreeScene() {
   return (
-    <section className="h-screen">
+    <section className="h-screen bg-sky-100 flex items-center justify-center">
+      <Canvas camera={{ position: [0, 0, 6] }}>
+        <ambientLight intensity={2} />
+        <directionalLight position={[2, 2, 2]} />
 
-      <Canvas camera={{ position: [0, 0, 5] }}>
-  <ambientLight intensity={2} />
-  <directionalLight position={[2, 2, 2]} />
-
-  <Box />
-</Canvas>
-
+        <FloatingBox />
+      </Canvas>
     </section>
   );
 }

@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Lenis from "lenis";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import gsap from "gsap";
@@ -10,13 +10,15 @@ import Sections from "./pages/Sections";
 gsap.registerPlugin(ScrollTrigger);
 
 function App() {
+  const audioRef = useRef(null);
+  const [playing, setPlaying] = useState(false);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.5,
       smoothWheel: true,
     });
 
-    // 🔥 Important
     lenis.on("scroll", ScrollTrigger.update);
 
     function raf(time) {
@@ -35,9 +37,25 @@ function App() {
 
   return (
     <>
-      <Navbar />
+      {/* Global Audio */}
+      <audio
+        ref={audioRef}
+        src="/music/song.mp3"
+        loop
+      />
+
+      <Navbar
+        audioRef={audioRef}
+        playing={playing}
+        setPlaying={setPlaying}
+      />
+
       <Hero />
-      <Sections />
+
+      <Sections
+        audioRef={audioRef}
+        playing={playing}
+      />
     </>
   );
 }

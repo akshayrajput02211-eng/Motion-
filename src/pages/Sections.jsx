@@ -16,9 +16,23 @@ import ScrollTriggerSection from "../components/sections/ScrollTriggerSection";
 import PremiumGlassCard from "../components/sections/PremiumGlassCard";
 import CardsStackSection from "../components/sections/CardsStackSection";
 import TextSplitRevealSection from "../components/sections/TextSplitRevealSection";
-import rf from "../components/sections/card3d";
+import ThreeScene from "../components/sections/card3d";
 import CreativeLoader from "../components/sections/CreativeLoader";
 import ThreeDCardsSection from "../components/sections/3DCardsSection";
+import BentoGridSection from "../components/sections/BentoGridSection";
+import ExpandCardSection from "../components/sections/ExpandCardSection";
+import AudioReactiveSection from "../components/sections/AudioReactiveSection";
+import ArcCarouselSection from "../components/sections/ArcCarouselSection";
+import QuantumFlowCarousel from "../components/sections/QuantumFlowCarousel";
+import Horizontalcard from "../components/sections/Horizontalcard";
+// import ParticalsSection from "../components/sections/ParticlesSection";
+import HoverLightCardsSection from "../components/sections/HoverLightCardsSection";
+import ImageRevealSection from "../components/sections/ImageRevealSection";
+
+
+
+
+
 
 
 export default function Sections() {
@@ -36,6 +50,7 @@ export default function Sections() {
       <MouseFollowSection />
       <MagneticButtonSection />
       
+      
       <BlobCursorSection />
       <CursorTrailSection />
       <InfiniteMarqueeSection />
@@ -45,9 +60,21 @@ export default function Sections() {
       <PremiumGlassCard />
       <CardsStackSection/>
       <TextSplitRevealSection/>
-      <rf/>
+      <ThreeScene />
       <CreativeLoader/>
       <ThreeDCardsSection/>
+      <BentoGridSection />
+      <ExpandCardSection />
+      <AudioReactiveSection />
+      <ArcCarouselSection />
+      <QuantumFlowCarousel/>
+      <Horizontalcard/>
+         {/* <ParticalsSection /> */}
+<HoverLightCardsSection />
+<ImageRevealSection />
+
+
+
 
 
 
